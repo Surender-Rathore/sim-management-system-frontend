@@ -79,7 +79,7 @@ A responsive web app to register, search, update and delete SIM cards. Built wit
 ### Installation
 
 ```bash
-git clone https://github.com/Surender-Rathore/sim-management-system
+git clone https://github.com/Surender-Rathore/sim-management-system-frontend
 cd SMS Frontend
 npm install
 ```
@@ -195,7 +195,7 @@ src/
 
 This frontend consumes a Spring Boot REST API.
 
-- **Repository:** `<backend-repo-link>`
+- **Repository:** https://github.com/Surender-Rathore/sim-management-system-backend
 - **Stack:** Java 21, Spring Boot 3, Spring Data JPA, MySQL
 
 | Method | Endpoint | Purpose |
@@ -212,7 +212,7 @@ This frontend consumes a Spring Boot REST API.
 ## Credits
 
 - **Frontend:** Surender
-- **Original backend:** Parkash Sarangani — built as a learning aid
+- **Original backend:** Om Parkash Sarangani — built as a learning aid
 - **Backend changes by me:** CNIC field (replaced IMSI), search by phone number, max 5 SIMs per CNIC, and error handling for the new rules
 
 ---
