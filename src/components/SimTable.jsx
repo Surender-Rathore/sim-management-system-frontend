@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Input, InputGroup, Table } from "reactstrap";
+import { Button, Input, InputGroup, Modal, ModalBody, ModalFooter, ModalHeader, Table } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import {
@@ -14,6 +14,8 @@ const SimTable = () => {
   const [simData, setSimData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchValue, setSearchValue] = useState("");
+  const [deleteId, setDeleteId] = useState(null);
+  const simToDelete = simData.find((sim)=> sim.id === deleteId);
 
   useEffect(() => {
     getAllSimCards()
@@ -30,6 +32,12 @@ const SimTable = () => {
         toast.success("Deleted Successfully!");
       })
       .catch(() => toast.error("Delete Failed!"));
+  };
+
+  const confirmDelete = () =>{
+    const id = deleteId;
+    setDeleteId(null);
+    handleDelete(id);
   };
 
   const handleSearch = () => {
@@ -90,7 +98,7 @@ const SimTable = () => {
                       <Button
                         color="danger"
                         className="ms-2"
-                        onClick={() => handleDelete(sim.id)}
+                        onClick={() => setDeleteId(sim.id)}
                       >
                         Delete
                       </Button>
@@ -102,6 +110,26 @@ const SimTable = () => {
           </Table>
         </div>
       )}
+
+      <Modal 
+      isOpen={deleteId != null}
+      toggle={()=> setDeleteId(null)}
+      centered
+      >
+        <ModalHeader toggle={()=> setDeleteId(null)}>
+          Confirm Delete
+        </ModalHeader>
+          <ModalBody>
+          Are you sure you want to delete SIM {" "}
+          <strong>{simToDelete?.msisdn}</strong>
+          {simToDelete?.assignedTo ? `(${simToDelete.assignedTo})` : ""} ? This action cannot be undone.
+          </ModalBody>
+          <ModalFooter>
+            <Button color="secondary" onClick={()=> setDeleteId(null)}>Cancel</Button>
+            <Button color="danger" onClick={confirmDelete}>Yes, Delete</Button>
+          </ModalFooter>
+
+      </Modal>
     </div>
   );
 };
