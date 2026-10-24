@@ -113,3 +113,17 @@
         transform: translateY(-2px);
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
+
+@media (max-width : 576px){
+        .home-hero-sub {
+                font-size: 0.95rem;
+                padding: 0 12px;
+        }
+        .home-stat-card h2{
+                font-size: 1.8rem;
+        }
+        .home-action-btn {
+                width: 100%;
+                justify-content: center;
+        }
+}
