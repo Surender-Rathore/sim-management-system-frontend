@@ -8,6 +8,7 @@ import {
   searchByMsisdn,
 } from "./../api/simCard";
 import LoadingBar from "./LoadingBar";
+import Pagination from "./Pagination";
 
 const SimTable = () => {
   const navigate = useNavigate();
@@ -118,6 +119,11 @@ const SimTable = () => {
         </div>
       )}
 
+      <Pagination 
+      currentPage={currentPage}
+      totalPages={totalPages}
+      onPageChange = {setCurrentPage}
+      />
       <Modal 
       isOpen={deleteId != null}
       toggle={()=> setDeleteId(null)}
