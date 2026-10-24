@@ -35,11 +35,10 @@ const Home = () => {
         </Jumbotron>
 
         <div className="container">
-          <Row className="text-center g-3 justify-content-center mb-5">
-            <Col md={3} sm={6}>
+          <Row className="text-center g-3 justify-content-center mb-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
+            <Col lg md={4} sm={6} className="d-flex">
               <Card
-                className="shadow-sm border-1"
-                style={{ borderRadius: "12px" }}
+                className="home-stat-card"
               >
                 <CardBody>
                   <h6 className="text-muted mb-2">Total SIMs</h6>
@@ -48,10 +47,9 @@ const Home = () => {
               </Card>
             </Col>
 
-            <Col md={3} sm={6}>
+            <Col lg md={4} sm={6} className="d-flex">
               <Card
-                className="shadow-sm border-1"
-                style={{ borderRadius: "12px" }}
+                className="home-stat-card"
               >
                 <CardBody>
                   <h6 className="text-muted mb-2">Active SIMs</h6>
@@ -60,10 +58,9 @@ const Home = () => {
               </Card>
             </Col>
 
-            <Col md={3} sm={6}>
+            <Col lg md={4} sm={6} className="d-flex">
               <Card
-                className="shadow-sm border-1"
-                style={{ borderRadius: "12px" }}
+                className="home-stat-card"
               >
                 <CardBody>
                   <h6 className="text-muted mb-2">Blocked SIMs</h6>
@@ -71,10 +68,9 @@ const Home = () => {
                 </CardBody>
               </Card>
             </Col>
-            <Col md={3} sm={6}>
+            <Col lg md={4} sm={6} className="d-flex">
               <Card
-                className="shadow-sm border-1"
-                style={{ borderRadius: "12px" }}
+                className="home-stat-card"
               >
                 <CardBody>
                   <h6 className="text-muted mb-2">Suspended SIMs</h6>
@@ -82,10 +78,9 @@ const Home = () => {
                 </CardBody>
               </Card>
             </Col>
-            <Col md={3} sm={6}>
+            <Col lg md={4} sm={6} className="d-flex">
               <Card
-                className="shadow-sm border-1"
-                style={{ borderRadius: "12px" }}
+                className="home-stat-card"
               >
                 <CardBody>
                   <h6 className="text-muted mb-2">Inactive SIMs</h6>

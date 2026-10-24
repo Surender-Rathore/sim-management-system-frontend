@@ -4,3 +4,28 @@
         margin: 12px 0 0;
         opacity: 0.9;
 }
+
+.home-stat-card {
+        border: 1px solid #e3e8ef;
+        border-radius: 14px;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(15, 37, 69, 0.08);
+        height: 100%;
+        width: 100%;
+}
+
+.home-stat-card h6 {
+        font-size: 0.8rem;
+        letter-spacing: normal;
+        text-transform: none;
+        font-weight: 500;
+        color: #6B7280;
+        margin-bottom: 8px;
+        white-space: nowrap;
+}
+
+.home-stat-card h2{
+        font-size: 2.2rem;
+        margin: 0;
+        font-weight: 700;
+}
