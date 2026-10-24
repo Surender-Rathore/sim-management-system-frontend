@@ -13,6 +13,7 @@
         height: 100%;
         width: 100%;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
+        animation: homeFadeUp 0.5s ease both;
 }
 
 .home-stat-card:hover{
@@ -125,5 +126,16 @@
         .home-action-btn {
                 width: 100%;
                 justify-content: center;
+        }
+}
+
+@keyframes homeFadeUp {
+        from {
+                opacity: 0;
+                transform: translateY(12px);
+        }
+        to {
+                opacity: 1;
+                transform: translateY(0);
         }
 }
