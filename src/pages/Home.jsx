@@ -6,6 +6,7 @@ import { getAllSimCards } from "../api/simCard";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import "../styles/home.css"
+import { FiCheckCircle, FiMinusCircle, FiPauseCircle, FiSlash, FiSmartphone } from "react-icons/fi";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -41,6 +42,9 @@ const Home = () => {
                 className="home-stat-card"
               >
                 <CardBody>
+                  <div className="home-stat-icon icon-total">
+                    <FiSmartphone />
+                  </div>
                   <h6 className="text-muted mb-2">Total SIMs</h6>
                   <h2 className="fw-bold text-primary">{totalSims}</h2>
                 </CardBody>
@@ -52,6 +56,9 @@ const Home = () => {
                 className="home-stat-card"
               >
                 <CardBody>
+                  <div className="home-stat-icon icon-active">
+                    <FiCheckCircle />
+                  </div>
                   <h6 className="text-muted mb-2">Active SIMs</h6>
                   <h2 className="fw-bold text-success">{activeSims}</h2>
                 </CardBody>
@@ -63,6 +70,9 @@ const Home = () => {
                 className="home-stat-card"
               >
                 <CardBody>
+                  <div className="home-stat-icon icon-blocked">
+                    <FiSlash />
+                  </div>
                   <h6 className="text-muted mb-2">Blocked SIMs</h6>
                   <h2 className="fw-bold text-danger">{BlockedSims}</h2>
                 </CardBody>
@@ -73,6 +83,9 @@ const Home = () => {
                 className="home-stat-card"
               >
                 <CardBody>
+                  <div className="home-stat-icon icon-suspended">
+                    <FiPauseCircle />
+                  </div>
                   <h6 className="text-muted mb-2">Suspended SIMs</h6>
                   <h2 className="fw-bold text-danger">{SuspendedSims}</h2>
                 </CardBody>
@@ -83,6 +96,9 @@ const Home = () => {
                 className="home-stat-card"
               >
                 <CardBody>
+                  <div className="home-stat-icon icon-inactive">
+                    <FiMinusCircle />
+                  </div>
                   <h6 className="text-muted mb-2">Inactive SIMs</h6>
                   <h2 className="fw-bold text-danger">{InactiveSims}</h2>
                 </CardBody>
