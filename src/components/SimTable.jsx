@@ -17,6 +17,13 @@ const SimTable = () => {
   const [deleteId, setDeleteId] = useState(null);
   const simToDelete = simData.find((sim)=> sim.id === deleteId);
 
+  const PAGE_SIZE = 25;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(simData.length / PAGE_SIZE);
+  const startIndex = (currentPage - 1) * PAGE_SIZE;
+  const currentSims = simData.slice(startIndex, startIndex + PAGE_SIZE);
+
   useEffect(() => {
     getAllSimCards()
       .then((resp) => setSimData(resp.data))
@@ -81,7 +88,7 @@ const SimTable = () => {
               </tr>
             </thead>
             <tbody>
-              {simData.map((sim) => (
+              {currentSims.map((sim) => (
                 <tr key={sim.id}>
                   <th scope="row">{sim.id}</th>
                   <td>{sim.msisdn}</td>
