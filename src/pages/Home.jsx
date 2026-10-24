@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { getAllSimCards } from "../api/simCard";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { BRAND } from "../config/brand";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Home = () => {
       <div>
         <Jumbotron>
           <h1 className="text-center fw-bold">
-            WELCOME TO SIM MANAGEMENT SYSTEM
+            WELCOME TO {BRAND.name.toUpperCase()}
           </h1>
         </Jumbotron>
 

@@ -8,6 +8,7 @@ import {
   searchByMsisdn,
 } from "./../api/simCard";
 import LoadingBar from "./LoadingBar";
+import StatusBadge from "./StatusBadge";
 
 const SimTable = () => {
   const navigate = useNavigate();
@@ -86,7 +87,7 @@ const SimTable = () => {
                   <th scope="row">{sim.id}</th>
                   <td>{sim.msisdn}</td>
                   <td>{sim.assignedTo ?? "-"}</td>
-                  <td>{sim.status}</td>
+                  <td><StatusBadge status = {sim.status} /></td>
                   <td className="mx-2">
                     <div className="d-flex justify-content-center align-items-center gap-2 flex-nowrap">
                       <Button

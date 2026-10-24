@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+        --brand-primary : #0B2545;
+        --brand-accent : #0EA5E9;
+        --brand-accent-hover : #0284C7;
+        --brand-bg : #F4F7FA;
+        --brand-text : #1E293B;
+
+
+        --status-active : #16A34A;
+        --status-inactive : #6B7280;
+        --status-suspended : #F59E0B;
+        --status-blocked : #DC2626;
+
+}
+
+body{
+        font-family: "Poppins", sans-serif;
+        background: var(--brand-bg);
+        color: var(--brand-text);
+}
+
+.brand-navbar{
+        background: var(--brand-primary) !important;
+        border-bottom: 3px solid var(--brand-accent);
+}
+.brand-footer {
+        background: var(--brand-primary);
+        color: #fff;
+        padding: 12px 0;
+        margin-top: 60px;
+        border-top: 3px solid var(--brand-accent);
+}
+
+.hero-banner {
+        background: linear-gradient(135deg, var(--brand-primary) 0%, #134074 100%);
+        color: #fff;
+}
+
+.modal-header-brand {
+        background: var(--brand-primary); color: #fff;
+}
+
+.btn-primary, .btn-success {
+        background: var(--brand-accent);
+        border-color: var(--brand-accent);
+}
+
+.btn-primary:hover, .btn-success:hover {
+        background: var(--brand-accent-hover);
+        border-color: var(--brand-accent-hover);
+}
+
+.status-active {
+        color: var(--status-active); font-weight: 600;
+}
+
+.status-inactive {
+        color: var(--status-inactive); font-weight: 600;
+}
+
+.status-suspended {
+        color: var(--status-suspended); font-weight: 600;
+}
+
+.status-blocked {
+        color: var(--status-blocked); font-weight: 600;
+}
+
+
+.brand-navbar .nav-link {
+        color: rgba(255, 255, 255, 0.75);
+}
+
+.brand-navbar .nav-link:hover {
+        color: #fff;
+}
+
+.brand-navbar .nav-link.active {
+        color: #fff;
+        border-bottom: 2px solid var(--brand-accent);
+}
