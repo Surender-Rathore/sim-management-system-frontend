@@ -96,3 +96,20 @@
 .num-inactive {
         color: #6b7280;
 }
+
+
+.home-action-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 24px;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-action-btn:hover{
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}

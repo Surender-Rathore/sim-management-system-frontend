@@ -6,7 +6,7 @@ import { getAllSimCards } from "../api/simCard";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import "../styles/home.css"
-import { FiCheckCircle, FiMinusCircle, FiPauseCircle, FiSlash, FiSmartphone } from "react-icons/fi";
+import { FiCheckCircle, FiList, FiMinusCircle, FiPauseCircle, FiPlusCircle, FiSlash, FiSmartphone } from "react-icons/fi";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -118,16 +118,16 @@ const Home = () => {
           <p className="text-muted mb-3">Quick Actions</p>
         </div>
 
-        <div className="text-center">
-          <Button color="success" onClick={() => navigate(`/sim-list`)}>
-            View All SIMs
+        <div className="d-flex justify-content-center flex-wrap gap-3 mb-4">
+          <Button color="success" className="home-action-btn" onClick={() => navigate(`/sim-list`)}>
+            <FiList /> View All SIMs
           </Button>
           <Button
-            className="ms-2"
+            className="home-action-btn"
             color="primary"
             onClick={() => navigate(`/add-sim`)}
           >
-            Register New Sim
+            <FiPlusCircle /> Register New Sim
           </Button>
         </div>
       </div>
