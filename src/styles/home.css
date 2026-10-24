@@ -12,6 +12,16 @@
         box-shadow: 0 2px 8px rgba(15, 37, 69, 0.08);
         height: 100%;
         width: 100%;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-stat-card:hover{
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(15, 37, 69, 0.15);
+}
+
+.home-stat-card:hover .home-stat-icon{
+        transform: scale(1.1);
 }
 
 .home-stat-card h6 {
@@ -39,6 +49,7 @@
         align-items: center;
         justify-content: center;
         font-size: 1.4rem;
+        transition: transform 0.2s ease;
 }
 
 .icon-total {
