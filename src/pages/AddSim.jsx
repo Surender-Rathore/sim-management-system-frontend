@@ -98,11 +98,11 @@ const AddSim = () => {
           <CardBody>
             {/* ICCID Field */}
             <Form>
-              <FormGroup row className="justify-content-center">
-                <Label for="iccid" className="mx-2" sm={2}>
+              <FormGroup className="sim-form-group">
+                <Label for="iccid" className="sim-form-label">
                   ICCID
                 </Label>
-                <Col sm={6}>
+                <Col>
                   <Input
                     id="iccid"
                     type="text"
@@ -117,11 +117,11 @@ const AddSim = () => {
               </Form>
             {/* cnic Field */}
             <Form>
-              <FormGroup row className="justify-content-center">
-                <Label for="cnic" className="mx-2" sm={2}>
+              <FormGroup className="sim-form-group">
+                <Label for="cnic" className="sim-form-label">
                   CNIC
                 </Label>
-                <Col sm={6}>
+                <Col>
                   <Input
                     id="cnic"
                     type="text"
@@ -137,11 +137,11 @@ const AddSim = () => {
 
               {/* MSISDN Field */}
 
-              <FormGroup row className="justify-content-center">
-                <Label for="msisdn" sm={2} className="mx-2">
+              <FormGroup className="sim-form-group">
+                <Label for="msisdn" className="sim-form-label">
                   Phone No
                 </Label>
-                <Col sm={6}>
+                <Col>
                   <Input
                     id="msisdn"
                     type="text"
@@ -158,11 +158,11 @@ const AddSim = () => {
               </FormGroup>
 
               {/* Carrier Field */}
-              <FormGroup row className="justify-content-center">
-                <Label for="carrier" sm={2} className="mx-2">
+              <FormGroup className="sim-form-group">
+                <Label for="carrier" className="sim-form-label">
                   Carrier
                 </Label>
-                <Col sm={6}>
+                <Col>
                   <Input
                     id="carrier"
                     type="text"
@@ -178,11 +178,11 @@ const AddSim = () => {
               </FormGroup>
 
               {/* Plan Type */}
-              <FormGroup row className="justify-content-center">
-                <Label for="planType" sm={2} className="mx-2">
+              <FormGroup className="sim-form-group">
+                <Label for="planType" className="sim-form-label">
                   Plan Type
                 </Label>
-                <Col sm={6}>
+                <Col>
                   <Input
                     id="planType"
                     type="text"
@@ -198,11 +198,11 @@ const AddSim = () => {
               </FormGroup>
 
               {/* Assigned To Field */}
-              <FormGroup row className="justify-content-center">
-                <Label for="assignedTo" sm={2} className="mx-2">
+              <FormGroup className="sim-form-group">
+                <Label for="assignedTo" className="sim-form-label">
                   Assigned To
                 </Label>
-                <Col sm={6}>
+                <Col>
                   <Input
                     id="assignedTo"
                     type="text"
@@ -218,11 +218,11 @@ const AddSim = () => {
               </FormGroup>
 
               {/* Activation date Field */}
-              <FormGroup row className="justify-content-center">
-                <Label for="activationDate" sm={2} className="mx-2">
+              <FormGroup className="sim-form-group">
+                <Label for="activationDate" className="sim-form-label">
                   Activation Date
                 </Label>
-                <Col sm={6}>
+                <Col>
                   <Input
                     id="activationDate"
                     type="date"
@@ -243,12 +243,12 @@ const AddSim = () => {
 
               {/* Status Field  */}
 
-              <FormGroup row className="justify-content-center">
-                <Label for="status" className="mx-2" sm={2}>
+              <FormGroup className="sim-form-group">
+                <Label for="status" className="sim-form-label">
                   Status
                 </Label>
 
-                <Col sm={6}>
+                <Col>
                   <Input
                     id="status"
                     type="select"
@@ -271,7 +271,7 @@ const AddSim = () => {
                 </Col>
               </FormGroup>
               {/* Button */}
-              <div className="text-center">
+              <div className="sim-form-actions">
                 <Button type="button" color="success" onClick={handleAddSim}>
                   Add SIM
                 </Button>

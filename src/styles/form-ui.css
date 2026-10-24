@@ -25,3 +25,48 @@
         padding: 16px 20px;
         border-bottom: none;
 }
+
+.sim-form-card .card-body {
+        padding: 24px 28px;
+}
+
+.sim-form-group {
+        margin-bottom: 18px;
+        display: block;
+        width: 100%;
+}
+
+.sim-form-label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #374151;
+}
+
+.sim-form-card .form-control, .sim-form-card .form-select {
+        border-radius: 8px;
+        padding: 10px 12px;
+        width: 100%;
+}
+
+
+@media (max-width : 576px) {
+        .sim-form-card .card-body{
+                padding: 18px 16px;
+        }
+        .sim-form-header h1{
+                font-size: 1.25rem;
+        }
+}
+
+.sim-form-actions {
+        margin-top: 8px;
+}
+
+.sim-form-actions .btn{
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        font-weight: 500;
+}
