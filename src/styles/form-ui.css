@@ -1,0 +1,27 @@
+.sim-form-card {
+        width: 100%;
+        max-width: 40rem;
+        margin: 0 auto 40px;
+        border: 1px solid #e3e8ef;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(15, 37, 69, 0.1);
+}
+
+.sim-form-header {
+        background: #57d3e4;
+        padding: 16px 20px;
+        border-bottom: none;
+}
+
+.sim-form-header h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0;
+}
+
+.sim-form-card .sim-form-header {
+        background: #57d3e4;
+        padding: 16px 20px;
+        border-bottom: none;
+}

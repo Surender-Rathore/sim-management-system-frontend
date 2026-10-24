@@ -17,6 +17,7 @@ import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { getSimCardById, updateSimCard } from "../api/simCard";
 import { formatCnic, validateSimForm } from "../utils/Validatesim";
+import "../styles/form-ui.css";
 
 const EditSim = () => {
   const navigate = useNavigate();
@@ -84,15 +85,9 @@ const EditSim = () => {
         }}
       >
         <Card
-          className="mx-auto"
-          color="dark"
-          outline
-          style={{
-            width: "100%",
-            maxWidth: "40rem",
-          }}
+        className="sim-form-card"
         >
-          <CardHeader style={{ backgroundColor: "#57d3e4" }}>
+          <CardHeader className="sim-form-header">
             <CloseButton
               style={{
                 color: "red",

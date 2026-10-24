@@ -17,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { createSimCard } from "../api/simCard";
 import { formatCnic, validateSimForm } from "../utils/Validatesim";
+import "../styles/form-ui.css";
 
 const AddSim = () => {
   const navigate = useNavigate();
@@ -81,15 +82,9 @@ const AddSim = () => {
         }}
       >
         <Card
-          className="mx-auto"
-          color="dark"
-          outline
-          style={{
-            width: "100%",
-            maxWidth: "40rem",
-          }}
+          className="sim-form-card"
         >
-          <CardHeader style={{ backgroundColor: "#57d3e4" }}>
+          <CardHeader className="sim-form-header">
             <CloseButton
               style={{
                 color: "red",
@@ -119,7 +114,7 @@ const AddSim = () => {
                   <FormFeedback>{errors.iccid}</FormFeedback>
                 </Col>
               </FormGroup>
-            </Form>
+              </Form>
             {/* cnic Field */}
             <Form>
               <FormGroup row className="justify-content-center">
