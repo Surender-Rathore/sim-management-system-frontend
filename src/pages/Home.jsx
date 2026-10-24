@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { getAllSimCards } from "../api/simCard";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import "../styles/home.css"
 
 const Home = () => {
   const navigate = useNavigate();
@@ -28,6 +29,9 @@ const Home = () => {
           <h1 className="text-center fw-bold">
             WELCOME TO SIM MANAGEMENT SYSTEM
           </h1>
+          <p className="home-hero-sub">
+            Track, manage and control every SIM from one place.
+          </p>
         </Jumbotron>
 
         <div className="container">
