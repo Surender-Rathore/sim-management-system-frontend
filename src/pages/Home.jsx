@@ -46,7 +46,7 @@ const Home = () => {
                     <FiSmartphone />
                   </div>
                   <h6 className="text-muted mb-2">Total SIMs</h6>
-                  <h2 className="fw-bold text-primary">{totalSims}</h2>
+                  <h2 className="fw-bold num-total">{totalSims}</h2>
                 </CardBody>
               </Card>
             </Col>
@@ -60,7 +60,7 @@ const Home = () => {
                     <FiCheckCircle />
                   </div>
                   <h6 className="text-muted mb-2">Active SIMs</h6>
-                  <h2 className="fw-bold text-success">{activeSims}</h2>
+                  <h2 className="fw-bold num-active">{activeSims}</h2>
                 </CardBody>
               </Card>
             </Col>
@@ -74,7 +74,7 @@ const Home = () => {
                     <FiSlash />
                   </div>
                   <h6 className="text-muted mb-2">Blocked SIMs</h6>
-                  <h2 className="fw-bold text-danger">{BlockedSims}</h2>
+                  <h2 className="fw-bold num-blocked">{BlockedSims}</h2>
                 </CardBody>
               </Card>
             </Col>
@@ -87,7 +87,7 @@ const Home = () => {
                     <FiPauseCircle />
                   </div>
                   <h6 className="text-muted mb-2">Suspended SIMs</h6>
-                  <h2 className="fw-bold text-danger">{SuspendedSims}</h2>
+                  <h2 className="fw-bold num-suspended">{SuspendedSims}</h2>
                 </CardBody>
               </Card>
             </Col>
@@ -100,7 +100,7 @@ const Home = () => {
                     <FiMinusCircle />
                   </div>
                   <h6 className="text-muted mb-2">Inactive SIMs</h6>
-                  <h2 className="fw-bold text-danger">{InactiveSims}</h2>
+                  <h2 className="fw-bold num-inactive">{InactiveSims}</h2>
                 </CardBody>
               </Card>
             </Col>
