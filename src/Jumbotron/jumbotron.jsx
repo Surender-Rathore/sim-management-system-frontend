@@ -7,11 +7,7 @@ const Jumbotron = ({ tag: Tag = 'div', fluid = true, className = '', children, .
   return (
     <Tag 
       // py-5 se top-bottom padding achhi ho jayegi, text-start se text left side par rahega
-      className={`py-5 px-4 mb-4 text-start ${fluidClass} ${className}`} 
-      // Ye exact wahi dark cool-grey shade hai jo video me Durgesh bhai ke component me dikh raha hai
-      style={{ backgroundColor: '#bba479'
-      
-       }} 
+      className={`hero-banner py-5 px-4 mb-4 text-start ${fluidClass} ${className}`}
       {...props}
     >
       {children}
