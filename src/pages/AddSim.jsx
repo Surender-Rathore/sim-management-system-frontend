@@ -114,9 +114,7 @@ const AddSim = () => {
                   <FormFeedback>{errors.iccid}</FormFeedback>
                 </Col>
               </FormGroup>
-              </Form>
             {/* cnic Field */}
-            <Form>
               <FormGroup className="sim-form-group">
                 <Label for="cnic" className="sim-form-label">
                   CNIC

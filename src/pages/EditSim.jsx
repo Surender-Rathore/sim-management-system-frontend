@@ -119,7 +119,7 @@ const EditSim = () => {
                 </Col>
               </FormGroup>
 
-              <FormGroup rclassName="sim-form-group">
+              <FormGroup className="sim-form-group">
                 <Label for="cnic" className="sim-form-label">
                   CNIC
                 </Label>
