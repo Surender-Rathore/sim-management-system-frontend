@@ -37,6 +37,10 @@ const SimTable = () => {
       .then(() => {
         const updatedSims = simData.filter((sim) => sim.id !== id);
         setSimData(updatedSims);
+        const newTotalPages = Math.ceil(updatedSims.length / PAGE_SIZE);
+        if (currentPage > newTotalPages){
+          setCurrentPage(Math.max(newTotalPages, 1))
+        }
         toast.success("Deleted Successfully!");
       })
       .catch(() => toast.error("Delete Failed!"));
@@ -49,6 +53,7 @@ const SimTable = () => {
   };
 
   const handleSearch = () => {
+    setCurrentPage(1)
     if (!searchValue.trim()) {
       getAllSimCards()
         .then((resp) => setSimData(resp.data))
