@@ -8,6 +8,7 @@ import {
   searchByMsisdn,
 } from "./../api/simCard";
 import LoadingBar from "./LoadingBar";
+import Pagination from "./Pagination";
 
 const SimTable = () => {
   const navigate = useNavigate();
@@ -16,6 +17,13 @@ const SimTable = () => {
   const [searchValue, setSearchValue] = useState("");
   const [deleteId, setDeleteId] = useState(null);
   const simToDelete = simData.find((sim)=> sim.id === deleteId);
+
+  const PAGE_SIZE = 25;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(simData.length / PAGE_SIZE);
+  const startIndex = (currentPage - 1) * PAGE_SIZE;
+  const currentSims = simData.slice(startIndex, startIndex + PAGE_SIZE);
 
   useEffect(() => {
     getAllSimCards()
@@ -29,6 +37,10 @@ const SimTable = () => {
       .then(() => {
         const updatedSims = simData.filter((sim) => sim.id !== id);
         setSimData(updatedSims);
+        const newTotalPages = Math.ceil(updatedSims.length / PAGE_SIZE);
+        if (currentPage > newTotalPages){
+          setCurrentPage(Math.max(newTotalPages, 1))
+        }
         toast.success("Deleted Successfully!");
       })
       .catch(() => toast.error("Delete Failed!"));
@@ -41,6 +53,7 @@ const SimTable = () => {
   };
 
   const handleSearch = () => {
+    setCurrentPage(1)
     if (!searchValue.trim()) {
       getAllSimCards()
         .then((resp) => setSimData(resp.data))
@@ -81,7 +94,7 @@ const SimTable = () => {
               </tr>
             </thead>
             <tbody>
-              {simData.map((sim) => (
+              {currentSims.map((sim) => (
                 <tr key={sim.id}>
                   <th scope="row">{sim.id}</th>
                   <td>{sim.msisdn}</td>
@@ -111,6 +124,11 @@ const SimTable = () => {
         </div>
       )}
 
+      <Pagination 
+      currentPage={currentPage}
+      totalPages={totalPages}
+      onPageChange = {setCurrentPage}
+      />
       <Modal 
       isOpen={deleteId != null}
       toggle={()=> setDeleteId(null)}
