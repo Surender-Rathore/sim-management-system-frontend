@@ -11,6 +11,7 @@ import StatCard from "../components/dash/StatCard";
 import StatusDonut from "../components/dash/StatusDonut";
 import CarrierBars from "../components/dash/CarrierBars";
 import LatestSims from "../components/dash/LatestSims";
+import ExportReports from "../components/dash/ExportReports";
 
 const CARRIER_FIELD = "carrier";
 const getGreeting = () => {
@@ -103,6 +104,7 @@ const Home = () => {
           </Col>
         </Row>
         <LatestSims sims={simData} />
+        <ExportReports sims={simData} />
       </Container>
 
       <hr className="my-4" style={{ width: "80%", margin: "20px auto" }} />

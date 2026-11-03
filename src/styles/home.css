@@ -172,3 +172,12 @@
         font-family: ui-monospace, Menlo, monospace;
         min-width: 130px;
 }
+
+/* export box */
+.dash-export {
+        background: #E8EEF4;
+        border: 0;
+        border-radius: 12px;
+        text-align: left;
+        margin-bottom: 24px;
+}
