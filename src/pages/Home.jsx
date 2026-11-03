@@ -32,15 +32,16 @@ const Home = () => {
         </Jumbotron>
 
         <div className="container">
-          <Row className="text-center g-3 justify-content-center mb-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
+          <Row className="dash-stat-row text-center justify-content-center mb-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
             {
-              STAT_META.map(({key, label, Icon})=>(
+              STAT_META.map(({key, label, Icon, color, tint})=>(
                 <StatCard
                 key={key}
                 label={label}
                 value={countByStatus(key)}
                 Icon={Icon}
-                tone={key.toLowerCase()}
+                color={color}
+                tint={tint}
                  />
               ))
             }

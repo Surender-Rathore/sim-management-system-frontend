@@ -1,18 +1,22 @@
 import PropTypes from "prop-types";
-import { Card, CardBody, Col } from "reactstrap"
+import { Col } from "reactstrap"
 
-const StatCard = ({label, value, Icon, tone}) => {
+const StatCard = ({label, value, Icon, color, tint}) => {
   return (
     <Col lg md={4} sm={6} className="d-flex">
-        <Card className="home-stat-card">
-                <CardBody>
-                        <div className={`home-stat-icon icon-${tone}`}>
-                                <Icon />
-                        </div>
-                        <h6 className="text-muted mb-2">{label}</h6>
-                        <h2 className={`fw-bold num-${tone}`}>{value}</h2>
-                </CardBody>
-        </Card>
+        <div
+        className="dash-stat-card"
+        style={{
+                "--stat-color":color, "--stat-tint":tint
+        }}
+        >
+                <div className="dash-stat-icon">
+                        <Icon size={20}/>
+                </div>
+                <div className="dash-stat-value">{value}</div>
+                <div className="dash-stat-label">{label}</div>
+
+        </div>
     </Col>
   );
 };
@@ -21,7 +25,8 @@ StatCard.propTypes = {
         label:PropTypes.string.isRequired,
         value:PropTypes.number.isRequired,
         Icon:PropTypes.elementType.isRequired,
-        tone:PropTypes.string.isRequired,
+        color:PropTypes.string.isRequired,
+        tint:PropTypes.string.isRequired,
 }
 
 export default StatCard
