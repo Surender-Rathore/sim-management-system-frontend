@@ -9,7 +9,9 @@ import { FiList, FiPlusCircle } from "react-icons/fi";
 import { STAT_META } from "./../components/dash/statMeta";
 import StatCard from "../components/dash/StatCard";
 import StatusDonut from "../components/dash/StatusDonut";
+import CarrierBars from "../components/dash/CarrierBars";
 
+const CARRIER_FIELD = "carrier";
 const getGreeting = () => {
   const h = new Date().getHours();
   return h < 12 ? "Good Morning" : h < 17 ? "Good Afternoon" : "Good Evening";
@@ -39,6 +41,13 @@ const Home = () => {
     n: countByStatus(m.key),
   }));
 
+  const carriers = [
+    ...new Set(simData.map((s) => s[CARRIER_FIELD]).filter(Boolean)),
+  ];
+  const carrierData = carriers.map((label) => ({
+    label,
+    value: simData.filter((s) => s[CARRIER_FIELD] === label).length,
+  }));
   const today = new Date().toLocaleDateString("en-GB", {
     weekday: "long",
     day: "numeric",
@@ -49,7 +58,9 @@ const Home = () => {
   return (
     <div>
       <Jumbotron>
-        <h1 className="text-center fw-bold">WELCOME TO SIM MANAGEMENT SYSTEM</h1>
+        <h1 className="text-center fw-bold">
+          WELCOME TO SIM MANAGEMENT SYSTEM
+        </h1>
         <p className="home-hero-sub">
           Track, manage and control every SIM from one place.
         </p>
@@ -86,6 +97,9 @@ const Home = () => {
           <Col md={6}>
             <StatusDonut data={donutData} total={simData.length} />
           </Col>
+          <Col md={6}>
+            <CarrierBars data={carrierData} />
+          </Col>
         </Row>
       </Container>
 
@@ -96,10 +110,18 @@ const Home = () => {
       </div>
 
       <div className="d-flex justify-content-center flex-wrap gap-3 mb-4">
-        <Button color="success" className="home-action-btn" onClick={() => navigate(`/sim-list`)}>
+        <Button
+          color="success"
+          className="home-action-btn"
+          onClick={() => navigate(`/sim-list`)}
+        >
           <FiList /> View All SIMs
         </Button>
-        <Button color="primary" className="home-action-btn" onClick={() => navigate(`/add-sim`)}>
+        <Button
+          color="primary"
+          className="home-action-btn"
+          onClick={() => navigate(`/add-sim`)}
+        >
           <FiPlusCircle /> Register New Sim
         </Button>
       </div>
