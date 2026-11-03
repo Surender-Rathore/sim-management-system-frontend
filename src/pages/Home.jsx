@@ -10,6 +10,7 @@ import { STAT_META } from "./../components/dash/statMeta";
 import StatCard from "../components/dash/StatCard";
 import StatusDonut from "../components/dash/StatusDonut";
 import CarrierBars from "../components/dash/CarrierBars";
+import LatestSims from "../components/dash/LatestSims";
 
 const CARRIER_FIELD = "carrier";
 const getGreeting = () => {
@@ -101,6 +102,7 @@ const Home = () => {
             <CarrierBars data={carrierData} />
           </Col>
         </Row>
+        <LatestSims sims={simData} />
       </Container>
 
       <hr className="my-4" style={{ width: "80%", margin: "20px auto" }} />

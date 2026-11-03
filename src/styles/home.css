@@ -166,3 +166,9 @@
 .dash-donut-legend i {
   font-style: normal;
 }
+
+/* latest SIMs list */
+.dash-mono {
+        font-family: ui-monospace, Menlo, monospace;
+        min-width: 130px;
+}
