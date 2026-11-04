@@ -1,7 +1,94 @@
+.check-sim-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.check-sim-card .form-control:focus {
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 0.2rem rgba(14, 165, 233, 0.2);
+}
+
+.btn.check-sim-btn {
+  background-color: #0ea5e9;
+  border-color: #0ea5e9;
+  color: #fff;
+  font-weight: 500;
+}
+
+.btn.check-sim-btn:hover,
+.btn.check-sim-btn:focus,
+.btn.check-sim-btn:active {
+  background-color: #0284c7;
+  border-color: #0284c7;
+  color: #fff;
+}
+
 .check-sim-result {
-        border-top: 4px solid #0EA5E9;
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid var(--st-color);
+  border-radius: 12px;
+  animation: checkSimFade 0.3s ease backwards;
+}
+
+.check-sim-icon {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--st-tint);
+  color: var(--st-color);
+  font-size: 22px;
 }
 
 .check-sim-num {
-        font-family: ui-monospace, Menlo, monospace;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.check-sim-pill {
+  margin-left: auto;
+  font-size: 12px;
+  padding: 3px 12px;
+  border-radius: 12px;
+  background: var(--st-color);
+  color: #fff;
+}
+
+.check-sim-pill-dark {
+  color: #412402;
+}
+
+.check-sim-label {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.alert.check-sim-help {
+  background: var(--st-tint);
+  color: var(--st-text);
+  border: 0;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+@keyframes checkSimFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .check-sim-result {
+    animation: none;
+  }
 }

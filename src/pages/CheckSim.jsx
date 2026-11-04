@@ -1,11 +1,9 @@
 import { useState } from "react";
 import {
   Alert,
-  Badge,
   Button,
   Card,
   CardBody,
-  CardTitle,
   Col,
   Container,
   Form,
@@ -15,29 +13,43 @@ import {
   Row,
   Spinner,
 } from "reactstrap";
+import {
+  FiCheckCircle,
+  FiMinusCircle,
+  FiPauseCircle,
+  FiSlash,
+} from "react-icons/fi";
 import Jumbotron from "../Jumbotron/jumbotron";
 import { searchByMsisdn } from "../api/simCard";
 import "../styles/checkSim.css";
 
 const STATUS_INFO = {
   ACTIVE: {
-    color: "success",
-    line: "#16A34A",
+    Icon: FiCheckCircle,
+    color: "#16A34A",
+    tint: "#DCFCE7",
+    text: "#14532D",
     help: "Your SIM is working normally.",
   },
   INACTIVE: {
-    color: "secondary",
-    line: "#6B7280",
+    Icon: FiMinusCircle,
+    color: "#6B7280",
+    tint: "#F3F4F6",
+    text: "#374151",
     help: "Your SIM is not active right now. Contact support to activate it.",
   },
   SUSPENDED: {
-    color: "warning",
-    line: "#F59E0B",
+    Icon: FiPauseCircle,
+    color: "#F59E0B",
+    tint: "#FEF3C7",
+    text: "#78350F",
     help: "Your SIM is suspended. Contact support to restore it.",
   },
   BLOCKED: {
-    color: "danger",
-    line: "#DC2626",
+    Icon: FiSlash,
+    color: "#DC2626",
+    tint: "#FEE2E2",
+    text: "#7F1D1D",
     help: "Your SIM is blocked. Contact support to get it reopened.",
   },
 };
@@ -80,7 +92,7 @@ const CheckSim = () => {
         (s) =>
           s &&
           sameNumber(s.msisdn, number) &&
-          digits(s.cnic).slice(-4) === last4
+          digits(s.cnic).slice(-4) === last4,
       );
 
       if (!found) {
@@ -100,14 +112,14 @@ const CheckSim = () => {
       setError(
         err.response?.status === 404
           ? "We couldn't find a SIM with these details."
-          : "Something went wrong. Please try again."
+          : "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
     }
   };
 
-  const info = sim ? STATUS_INFO[sim.status] ?? STATUS_INFO.INACTIVE : null;
+  const info = sim ? (STATUS_INFO[sim.status] ?? STATUS_INFO.INACTIVE) : null;
 
   return (
     <div>
@@ -121,7 +133,7 @@ const CheckSim = () => {
       <Container className="py-4">
         <Row className="justify-content-center">
           <Col md={8} lg={5}>
-            <Card className="mb-3">
+            <Card className="check-sim-card mb-3">
               <CardBody>
                 <Form onSubmit={handleSubmit}>
                   <FormGroup>
@@ -145,7 +157,7 @@ const CheckSim = () => {
                       onChange={(e) => setCnicLast4(e.target.value)}
                     />
                   </FormGroup>
-                  <Button color="primary" className="w-100" disabled={loading}>
+                  <Button className="check-sim-btn w-100" disabled={loading}>
                     {loading ? <Spinner size="sm" /> : "Check status"}
                   </Button>
                 </Form>
@@ -157,44 +169,48 @@ const CheckSim = () => {
             {sim && (
               <Card
                 className="check-sim-result"
-                style={{ borderTopColor: info.line }}
+                style={{
+                  "--st-color": info.color,
+                  "--st-tint": info.tint,
+                  "--st-text": info.text,
+                }}
               >
                 <CardBody>
-                  <div className="d-flex align-items-center gap-2 mb-3">
+                  <div className="d-flex align-items-center gap-3 mb-3">
+                    <div className="check-sim-icon">
+                      <info.Icon />
+                    </div>
                     <div>
-                      <CardTitle tag="h5" className="mb-0 check-sim-num">
-                        {sim.msisdn}
-                      </CardTitle>
+                      <div className="check-sim-num">{sim.msisdn}</div>
                       <small className="text-muted">{sim.carrier}</small>
                     </div>
-                    <Badge
-                      className={`ms-auto ${sim.status === "SUSPENDED" ? "text-dark" : ""}`}
-                      color={info.color}
+                    <span
+                      className={`check-sim-pill ${sim.status === "SUSPENDED" ? "check-sim-pill-dark" : ""}`}
                     >
                       {statusLabel(sim.status)}
-                    </Badge>
+                    </span>
                   </div>
 
                   <Row className="g-3 mb-3">
                     <Col xs={6}>
-                      <small className="text-muted d-block">Plan</small>
+                      <span className="check-sim-label">Plan</span>
                       {sim.planType || "-"}
                     </Col>
                     <Col xs={6}>
-                      <small className="text-muted d-block">Registered to</small>
+                      <span className="check-sim-label">Registered to</span>
                       {maskName(sim.assignedTo) || "-"}
                     </Col>
                     <Col xs={6}>
-                      <small className="text-muted d-block">Activated on</small>
+                      <span className="check-sim-label">Activated on</span>
                       {formatDate(sim.activationDate)}
                     </Col>
                     <Col xs={6}>
-                      <small className="text-muted d-block">Last updated</small>
+                      <span className="check-sim-label">Last updated</span>
                       {formatDate(sim.updatedAt)}
                     </Col>
                   </Row>
 
-                  <Alert color={info.color} className="mb-0">
+                  <Alert color="light" className="check-sim-help mb-0">
                     {info.help}
                   </Alert>
                 </CardBody>
