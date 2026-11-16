@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { getAllSimCards } from "../api/simCard";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { BRAND } from "../config/brand";
 import "../styles/home.css";
 import { FiList, FiPlusCircle } from "react-icons/fi";
 import { STAT_META } from "./../components/dash/statMeta";
@@ -60,73 +59,6 @@ const Home = () => {
 
   return (
     <div>
-      <div>
-        <Jumbotron>
-          <h1 className="text-center fw-bold">
-            WELCOME TO {BRAND.name.toUpperCase()}
-          </h1>
-        </Jumbotron>
-
-        <div className="container">
-          <Row className="text-center g-3 justify-content-center mb-5">
-            <Col md={3} sm={6}>
-              <Card
-                className="shadow-sm border-1"
-                style={{ borderRadius: "12px" }}
-              >
-                <CardBody>
-                  <h6 className="text-muted mb-2">Total SIMs</h6>
-                  <h2 className="fw-bold text-primary">{totalSims}</h2>
-                </CardBody>
-              </Card>
-            </Col>
-
-            <Col md={3} sm={6}>
-              <Card
-                className="shadow-sm border-1"
-                style={{ borderRadius: "12px" }}
-              >
-                <CardBody>
-                  <h6 className="text-muted mb-2">Active SIMs</h6>
-                  <h2 className="fw-bold text-success">{activeSims}</h2>
-                </CardBody>
-              </Card>
-            </Col>
-
-            <Col md={3} sm={6}>
-              <Card
-                className="shadow-sm border-1"
-                style={{ borderRadius: "12px" }}
-              >
-                <CardBody>
-                  <h6 className="text-muted mb-2">Blocked SIMs</h6>
-                  <h2 className="fw-bold text-danger">{BlockedSims}</h2>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col md={3} sm={6}>
-              <Card
-                className="shadow-sm border-1"
-                style={{ borderRadius: "12px" }}
-              >
-                <CardBody>
-                  <h6 className="text-muted mb-2">Suspended SIMs</h6>
-                  <h2 className="fw-bold text-danger">{SuspendedSims}</h2>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col md={3} sm={6}>
-              <Card
-                className="shadow-sm border-1"
-                style={{ borderRadius: "12px" }}
-              >
-                <CardBody>
-                  <h6 className="text-muted mb-2">Inactive SIMs</h6>
-                  <h2 className="fw-bold text-danger">{InactiveSims}</h2>
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
       <Jumbotron>
         <h1 className="text-center fw-bold">
           WELCOME TO SIM MANAGEMENT SYSTEM
