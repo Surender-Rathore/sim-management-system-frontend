@@ -2,6 +2,7 @@ import { Navbar, NavbarToggler, Collapse, Nav, NavItem, NavbarBrand } from "reac
 import { useState } from "react";
 import { NavLink as ReactNavLink } from "react-router-dom";
 import { BRAND } from './../config/brand';
+import UserMenu from "./UserMenu";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,6 +37,9 @@ export default function NavBar() {
               Add SIM
             </ReactNavLink>
           </NavItem>
+        </Nav>
+        <Nav navbar>
+          <UserMenu />
         </Nav>
       </Collapse>
     </Navbar>
