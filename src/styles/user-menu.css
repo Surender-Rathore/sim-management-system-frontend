@@ -1,6 +1,3 @@
-/* NEW: user dropdown ki styling. brand.css ke variables use karti hai, usay badla nahi. */
-
-/* UserAvatar ke classes (UserAvatar.jsx mein inka istemal ho raha hai) */
 .user-avatar {
   border-radius: 50%;
   object-fit: cover;

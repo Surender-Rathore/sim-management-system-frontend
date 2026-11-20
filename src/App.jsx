@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import EditSim from "./pages/EditSim.jsx";
 import { Toaster } from "react-hot-toast";
 import Layout from "./components/Layout.jsx";
+import Profile from "./pages/Profile.jsx";
 function App() {
   return (
     <div
@@ -20,6 +21,7 @@ function App() {
             <Route path="/add-sim" element={<AddSim />} />
             <Route path="/sim-list" element={<SimList />} />
             <Route path="/sim-edit/:id" element={<EditSim />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </Layout>
       </BrowserRouter>

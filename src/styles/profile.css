@@ -1,0 +1,13 @@
+.profile-card{
+        border-top: 3px solid var(--brand-accent);
+        border-radius: 12px;
+}
+
+.profile-avatar-wrap .user-avatar {
+        border-width: 3px;
+}
+
+.profile-label {
+        color: #64748b;
+        font-size: 0.85rem;
+}

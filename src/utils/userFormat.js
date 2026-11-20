@@ -8,19 +8,19 @@ export function getInitials(name = "") {
 }
 
 export function maskCnic(cnic = "") {
-  return cnic.replace(/^(\d{5})-(\d{7}) - (\d)$/, "$1-*******-$3");
+  return cnic.replace(/^(\d{5})-(\d{7})-(\d)$/, "$1-*******-$3");
 }
 
 export function maskPhone(phone = "") {
-  const digits = phone.replace(/\d/g, "");
+  const digits = phone.replace(/\D/g, "");
   if (digits.length < 7) return phone;
-  return `${digits.slice(0, 4)} - ${"*".repeat(digits.length - 6)}${digits.slice(-2)}`;
-};
+  return `${digits.slice(0, 4)}-${"*".repeat(digits.length - 6)}${digits.slice(-2)}`;
+}
 
-export function formatDate (value){
-        return new Date(value).toLocaleDateString("en-GB", {
-                day:"numeric",
-                month:"long",
-                year:"numeric",
-        });
-};
+export function formatDate(value) {
+  return new Date(value).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
